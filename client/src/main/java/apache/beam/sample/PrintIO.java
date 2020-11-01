@@ -1,11 +1,6 @@
 package apache.beam.sample;
 
-import org.apache.beam.sdk.transforms.*;
-import org.apache.beam.sdk.values.KV;
-import org.apache.beam.sdk.values.PCollection;
-import org.apache.beam.sdk.values.TypeDescriptors;
-
-import java.util.Arrays;
+import org.apache.beam.sdk.transforms.DoFn;
 
 public class PrintIO extends DoFn<String, String> {
 

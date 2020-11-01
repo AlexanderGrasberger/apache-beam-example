@@ -7,7 +7,6 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 
 import java.time.Duration;
 import java.util.Collections;
-import java.util.Dictionary;
 import java.util.HashMap;
 
 public class CustomKafkaConsumer implements Runnable{
