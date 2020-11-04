@@ -33,7 +33,7 @@ public class Main {
                 .withKeyDeserializer(LongDeserializer.class)
                 .withValueDeserializer(StringDeserializer.class)
         );
-        PCollection<KafkaRecord<Long, String>> windowed = topics.apply(Window.into(FixedWindows.of(Duration.standardSeconds(1))));
+        PCollection<KafkaRecord<Long, String>> windowed = topics.apply(Window.into(FixedWindows.of(Duration.standardSeconds(5))));
 
         PCollection<String> text = windowed.apply(ParDo.of(new DoFn<KafkaRecord<Long, String>, String>() {
             @ProcessElement
