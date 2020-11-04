@@ -27,11 +27,13 @@ public class KafkaClient {
         Scanner scanner = new Scanner(System.in);
 
         CustomKafkaConsumer consumer = new CustomKafkaConsumer(createConsumer());
-        new Thread(consumer).start();
+        Thread consumerThread = new Thread(consumer);
+        consumerThread.start();
 
         while (!(line = scanner.nextLine()).equals("exit")) {
             producer.send(new ProducerRecord<Long, String>(TOPIC, index++, line));
         }
+        consumerThread.interrupt();
     }
 
     private static Consumer<String, Long> createConsumer() {
