@@ -21,9 +21,6 @@ import org.joda.time.Duration;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        String inputFilePattern = "data/*";
-        String outputsPrefix = "outputs/stream/";
-
         PipelineOptions options = PipelineOptionsFactory.create();
         Pipeline pipeline = Pipeline.create(options);
 
